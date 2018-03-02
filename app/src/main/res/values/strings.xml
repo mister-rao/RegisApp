@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">RegisApp</string>
+    <string name="name">Name</string>
+    <string name="Email">Email</string>
+    <string name="Uname">Username</string>
+    <string name="Pass1">Password</string>
+    <string name="Pass2">ReEnter Password</string>
+    <string name="submit">Register</string>
+    <string name="registration">Registration Form</string>
+    <string name="details">Entered Details are:</string>
+    <string name="Male">Male</string>
+    <string name="Female">Female</string>
+    <string name="I_am">I am</string>
+    <string name="Age">Age</string>
+    <string name="err_msg_name">Enter Your Full Name</string>
+    <string name="err_msg_email">Enter a Valid Email Address</string>
+    <string name="err_msg_password">Password!</string>
+</resources>
