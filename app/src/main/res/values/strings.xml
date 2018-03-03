@@ -12,7 +12,12 @@
     <string name="Female">Female</string>
     <string name="I_am">I am</string>
     <string name="Age">Age</string>
-    <string name="err_msg_name">Enter Your Full Name</string>
+    <string name="err_msg_name">Enter a valid User Name</string>
     <string name="err_msg_email">Enter a Valid Email Address</string>
     <string name="err_msg_password">Password!</string>
+    <string name="label_name">Name:</string>
+    <string name="label_Mail">Email:</string>
+    <string name="label_username">Uname:</string>
+    <string name="label_age">Age:</string>
+    <string name="label_gender">Sex:</string>
 </resources>

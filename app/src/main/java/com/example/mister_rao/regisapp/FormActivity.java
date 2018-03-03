@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 import android.support.design.widget.TextInputLayout;
 import android.text.Editable;
@@ -22,7 +23,7 @@ public class FormActivity extends AppCompatActivity {
     private EditText Name, Email, Username, pass1, pass2;
     private Button SubmitButton;
     private TextInputLayout inputLayoutName, inputLayoutEmail, inputLayoutPassword;
-
+    private RadioButton RM, RF;
 
 
     @Override
@@ -41,6 +42,8 @@ public class FormActivity extends AppCompatActivity {
         inputLayoutEmail = findViewById(R.id.input_layout_Mail);
         inputLayoutPassword = findViewById(R.id.input_layout_Pass);
 
+        RF = findViewById(R.id.radioF);
+        RM = findViewById(R.id.radioM);
         Username.addTextChangedListener(new MyTextWatcher(Username));
         Email.addTextChangedListener(new MyTextWatcher(Email));
         pass2.addTextChangedListener(new MyTextWatcher(pass1));
@@ -54,9 +57,17 @@ public class FormActivity extends AppCompatActivity {
                 String Username1 = Username.getText().toString();
                 String pass11 = pass1.getText().toString();
                 String pass21 = pass2.getText().toString();
+                String gender = "xyz";
+
+                if(RF.isChecked()){
+                    gender = "Female";
+                }
+                else if(RM.isChecked()){
+                    gender = "Male";
+                }
 
 
-                if (Name1.equals("") || Email1.equals("") || Username1.equals("") || pass11.equals("") || pass21.equals("")) {
+                    if (Name1.equals("") || Email1.equals("") || Username1.equals("") || pass11.equals("") || pass21.equals("")) {
                     Toast.makeText(FormActivity.this, "All Credentials are Mandatory", Toast.LENGTH_SHORT).show();
                 }
 
@@ -66,11 +77,12 @@ public class FormActivity extends AppCompatActivity {
                     intent.putExtra("intent_Name", Name1);
                     intent.putExtra("intent_Email", Email1);
                     intent.putExtra("intent_Username", Username1);
+                    intent.putExtra("intent_Sex",gender);
                     Toast.makeText(FormActivity.this, "Successfully Registered", Toast.LENGTH_SHORT).show();
                     startActivity(intent);
 
                 } else {
-                    if (pass11.length() < 8) {
+                    if (pass11.length() < 8 && pass11.length() > 0) {
                         Toast.makeText(FormActivity.this, "Password Too Short!!", Toast.LENGTH_SHORT).show();
                     }
                     if (pass11.length() > 8 && pass11 != pass21) {
